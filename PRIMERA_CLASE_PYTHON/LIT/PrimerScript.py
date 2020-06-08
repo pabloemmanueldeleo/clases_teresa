@@ -1,14 +1,14 @@
+#importamos el modulo
 import pymel.core as pm
-import math
+#creamos las variables a usar.
 lit = []
 LG = pm.group(em=True,name='LIT_GRP')
 rotacion=0
+cantidadDeLuces=22
+radioDeTodasLasLuces=20
+scalaPersonal=3
 
-radio=50
-luces=12
-scala=5
-
-for n in range(1,luces):
+for n in range(1,cantidadDeLuces):
     #Generamos nombre de la luz
     newName='LUZ_{0}_AIAL'.format(str(n).zfill(3))
     #Creamos un grupo para usarlo temporalmente
@@ -22,13 +22,14 @@ for n in range(1,luces):
     #Emparentamos el padre de la luz en el grupo temporal
     pm.parent(pl,grupoTemporal)
     #movemos la el transform de la luz en x positivo 10
-    pl.setAttr('translateX',radio*scala)
+    pl.setAttr('translateX',radioDeTodasLasLuces)
     #rotamos el transform de la luz en y 90 grados
     pl.setAttr('rotateY',90)
     #Escalamos las luces para que queden parejas
-    pl.setAttr('scaleX',(scala*radio)/luces)
-    pl.setAttr('scaleY',(scala*radio)/luces)
-    pl.setAttr('scaleZ',(scala*radio)/luces)
+    calculoScala=scalaPersonal
+    pl.setAttr('scaleX',calculoScala)
+    pl.setAttr('scaleY',calculoScala)
+    pl.setAttr('scaleZ',calculoScala)
     #rotamos el grupo temporal su transform en Y por cada vuelta le sumamos la rotacion
     grupoTemporal.setAttr('rotateY',rotacion)
     #Emparento el transform de la luz al grupo maestro principal
@@ -38,4 +39,4 @@ for n in range(1,luces):
     #Guardamos las luces dentro de la variable lit desde su transfomr
     lit.append([l,pl])
     #Al final le sumamos a la variable rotacion 18 para seguir rotando
-    rotacion+= scala*radio*(math.pi)
+    rotacion+= 18
