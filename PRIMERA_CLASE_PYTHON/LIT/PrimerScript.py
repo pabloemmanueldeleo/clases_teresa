@@ -4,7 +4,7 @@ lit = []
 LG = pm.group(em=True,name='LIT_GRP')
 rotacion=0
 
-radio=20
+radio=200
 luces=20
 
 scala=radio*math.pi/luces
