@@ -1,7 +1,7 @@
 import pymel.core as pm
 import math
 
-def ringLight(radio=100,luces=14,scala=0):
+def ringLight(radio=100,luces=14,scala=0,pos=(0,0,0),rot=(0,0,0)):
     lit = []
     LG = pm.group(em=True,name='LIT_RINGLIGHT_GRP')
     rotacion=0
@@ -43,8 +43,16 @@ def ringLight(radio=100,luces=14,scala=0):
         #Al final le sumamos a la variable rotacion 18 para seguir rotando
         rotacion+= 360/luces
     
-    LG.setAttr()
+    LG.setAttr('translateX',pos[0])
+    LG.setAttr('translateY',pos[1])
+    LG.setAttr('translateY',pos[2])
+    LG.setAttr('rotateX',rot[0])
+    LG.setAttr('rotateY',rot[1])
+    LG.setAttr('rotateZ',rot[2])
     
     return lit,LG
     
-datos=ringLight(100,10,)
+datos=[]
+datos+=ringLight(100,10,pos=(0,0,0),rot=(0,0,0))
+datos+=ringLight(100,10,pos=(0,0,0),rot=(0,0,90))
+datos+=ringLight(100,10,pos=(0,0,0),rot=(90,0,0))
