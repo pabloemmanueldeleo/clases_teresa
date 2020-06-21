@@ -5,3 +5,4 @@ Ejercicios de clase y tareas para teresa.
 <p>Crear la misma variacion de luz pero que lo haga en los dos ejes faltantes, formando un anillo en cada direccion.</p>
 <h2>2° Ejercicio:</h2>
 <p>Crear interface grafica simple para la funcion anterior.</p>
+https://www.loom.com/share/daa6566703ea405eb54ff08cb8f03726
