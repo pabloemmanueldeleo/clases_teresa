@@ -1,5 +1,8 @@
 import pymel.core as pm
+import arnold
 import math
+
+
 
 def ringLight(radio=100,luces=14,scala=0,pos=(0,0,0),rot=(0,0,0)):
     lit = []
@@ -51,8 +54,8 @@ def ringLight(radio=100,luces=14,scala=0,pos=(0,0,0),rot=(0,0,0)):
     LG.setAttr('rotateZ',rot[2])
     
     return lit,LG
-    
-datos=[]
-datos+=ringLight(100,10,pos=(0,0,0),rot=(0,0,0))
-datos+=ringLight(100,10,pos=(0,0,0),rot=(0,0,90))
-datos+=ringLight(100,10,pos=(0,0,0),rot=(90,0,0))
+
+# datos=[]
+# datos+=ringLight(100,10,pos=(0,0,0),rot=(0,0,0))
+# datos+=ringLight(100,10,pos=(0,0,0),rot=(0,0,90))
+# datos+=ringLight(100,10,pos=(0,0,0),rot=(90,0,0))
