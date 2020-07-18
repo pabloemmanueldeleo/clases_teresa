@@ -18,13 +18,15 @@ def ringLight(radio=100,luces=14,pos=(0,0,0),rot=(0,0,0),scala=0):
         #Creamos un grupo para usarlo temporalmente
         grupoTemporal = pm.group(em=True)
         #Creando un nodo de luz arnold area
-        l = pm.createNode('aiAreaLight')
+        l = pm.shadingNode('aiAreaLight', asLight=True)
+        print(l)
         #Pedimos el padre del shape de nuestra luz
-        pl = l.getParent()
+        #pl = l.getParent()
+        pl = l
         #Renombramos el nombre del padre de la luz
         pl.rename(newName)
         #Emparentamos el padre de la luz en el grupo temporal
-        pm.parent(pl,grupoTemporal)
+        pm.parent(l,grupoTemporal)
         #movemos la el transform de la luz en x positivo 10
         pl.setAttr('translateX',radio)
         #rotamos el transform de la luz en y 90 grados
@@ -65,12 +67,12 @@ def crearRing():
     #print (int(cantidad),int(radio),p1,p2,p3,r1,r2,r3)
     ringLight(int(radio),int(cantidad),(p1,p2,p3),(r1,r2,r3))
     
-wname='LIT RING'
+wname1='LIT-RING'
 
-if pm.window('LIT RING',ex=True):
-    pm.deleteUI('LIT RING')
+if pm.window(wname1,ex=True):
+    pm.deleteUI(wname1)
 
-window = pm.window('LIT RING',title='LIT RING')
+wname1 = pm.window(wname1,title='LIT RING')
 c=pm.columnLayout(adjustableColumn=True)
 cant=pm.textFieldGrp( label='Cantidad', text='14' )
 rad=pm.textFieldGrp( label='Radio', text='100' )
@@ -86,7 +88,5 @@ ffr1=pm.floatField( minValue=-360, maxValue=360, precision=2 )
 ffr2=pm.floatField( minValue=-360, maxValue=360, precision=2 )
 ffr3=pm.floatField( minValue=-360, maxValue=360, precision=2 )
 pm.setParent(c)
-pm.button('CREAR LIT RING',c='crearRing()',h=100)
-window.show()
-
-
+pm.button('CREAR LIT RING',c='crearRing()',h=100,bgc=(0.2,0.6,0.5))
+pm.showWindow(wname1)
