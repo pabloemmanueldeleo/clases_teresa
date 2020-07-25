@@ -6,3 +6,6 @@ Ejercicios de clase y tareas para teresa.
 <h2>2° Ejercicio:</h2>
 <p>Crear interface grafica simple para la funcion anterior.</p>
 https://www.loom.com/share/daa6566703ea405eb54ff08cb8f03726
+<h2>3° Ejercicio:</h2>
+<p>Agragamos nuevas herramientas a la interface y cerramos.</p>
+https://www.loom.com/share/ba08724763e847daabc34627b639ee74
