@@ -1,5 +1,6 @@
 # clases_teresa
 Ejercicios de clase y tareas para teresa.
+<img src=https://github.com/pabloemmanueldeleo/clases_teresa/blob/master/PRIMERA_CLASE_PYTHON/LIT/Anotaci%C3%B3n%202020-07-25%20184422.jpg >
 
 <h2>1° Ejercicio:</h2>
 <p>Crear la misma variacion de luz pero que lo haga en los dos ejes faltantes, formando un anillo en cada direccion.</p>
